@@ -5,11 +5,11 @@ import { ThemeContext } from "styled-components";
 import { shade } from "polished";
 import { StoreState } from "../../store/createStore";
 import { useSelector, useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import {
   enableDarkTheme,
   enableLightTheme,
 } from "../../store/modules/theme/actions";
-import { Link, useHistory } from "react-router-dom";
 
 const Header1: React.FC = () => {
   const { title, colors } = useContext(ThemeContext);
@@ -55,7 +55,9 @@ const Header1: React.FC = () => {
         <div className="rightInfos">
           <div className="infos">
             <h6>Bem vindo, {username}</h6>
-            <h6>Carrinho: {carElements.length}</h6>
+            <a href="/cart">
+              <h6>Carrinho: {carElements.length}</h6>
+            </a>
           </div>
           <Switch
             onChange={toggleTheme}

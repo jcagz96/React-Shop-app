@@ -7,7 +7,7 @@ interface IProduct {
   id: number;
   name: string;
   category: string;
-  price: string;
+  price: number;
   size: number;
   images: {
     id: number;
@@ -17,6 +17,7 @@ interface IProduct {
 
 export interface CarState {
   emptyCar: boolean;
+  totalPrice: number;
   carSize: number;
   carElements: IProduct[];
 }

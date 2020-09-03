@@ -4,7 +4,7 @@ interface IProduct {
   id: number;
   name: string;
   category: string;
-  price: string;
+  price: number;
   size: number;
   images: {
     id: number;
@@ -17,8 +17,8 @@ export function addCarItem(carItem: IProduct) {
     carItem,
   });
 }
-export function removeCarItem({ carItem }: { carItem: string }) {
+export function removeCarItem(id: number) {
   return action("@car/REMOVE", {
-    carItem,
+    id,
   });
 }

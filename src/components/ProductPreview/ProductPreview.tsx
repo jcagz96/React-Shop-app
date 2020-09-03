@@ -10,7 +10,7 @@ interface IProduct {
   id: number;
   name: string;
   category: string;
-  price: string;
+  price: number;
   availableSizes: number[];
   images: {
     id: number;
