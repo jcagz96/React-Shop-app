@@ -17,8 +17,8 @@ export function addCarItem(carItem: IProduct) {
     carItem,
   });
 }
-export function removeCarItem(id: number) {
+export function removeCarItem(carItem: IProduct) {
   return action("@car/REMOVE", {
-    id,
+    carItem,
   });
 }

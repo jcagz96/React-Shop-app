@@ -24,12 +24,25 @@ export default function auth(
         carElements: [...state.carElements, action.payload.carItem],
       };
     case "@car/REMOVE":
+      var emptyCarFlag: boolean = false;
+
+      if (state.carSize - 1 === 0) {
+        emptyCarFlag = true;
+      }
+
+      console.log("Valor do item a remover: " + action.payload.carItem.price);
+      console.log(
+        `${state.totalPrice} - ${action.payload.carItem.price} = ${state
+          .totalPrice - action.payload.carItem.price}`,
+      );
+
       return {
         ...state,
-        emptyCar: false,
+        emptyCar: emptyCarFlag,
         carSize: state.carSize - 1,
+        totalPrice: state.totalPrice - action.payload.carItem.price,
         carElements: state.carElements.filter((item) =>
-          item.id !== action.payload.id
+          item.id !== action.payload.carItem.id
         ),
       };
     default:

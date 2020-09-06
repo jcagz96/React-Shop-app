@@ -12,8 +12,8 @@ function Cart() {
   );
   const dispatch = useDispatch();
 
-  function removeItemFromCart(id: number) {
-    dispatch(removeCarItem(id));
+  function removeItemFromCart(item: any) {
+    dispatch(removeCarItem(item));
   }
 
   return (
@@ -41,7 +41,7 @@ function Cart() {
                 <div className="product-size">
                   <button
                     onClick={() => {
-                      removeItemFromCart(item.id);
+                      removeItemFromCart(item);
                     }}
                   >
                     X

@@ -45,7 +45,7 @@ function HomePage() {
       id: 100,
       name: "NIKE SB ZOOM JANOSKI CANVAS RM SHOES (UNIVERSITY RED CLUB GOLD)",
       category: "Lifestyle",
-      price: 84.90,
+      price: 84.99,
       availableSizes: [38, 40, 41, 44],
       images: [
         {
@@ -69,7 +69,7 @@ function HomePage() {
       id: 101,
       name: "NIKE SB ZOOM JANOSKI SLIP RM SHOES (BLACK WHITE)",
       category: "Street",
-      price: 70.90,
+      price: 70.99,
       availableSizes: [40.5],
       images: [
         {
@@ -93,7 +93,7 @@ function HomePage() {
       id: 102,
       name: "Air Jordan 1 Mid SE",
       category: "SNEAKERS",
-      price: 129.90,
+      price: 129.99,
       availableSizes: [40, 41, 42],
       images: [
         {
@@ -117,7 +117,7 @@ function HomePage() {
       id: 103,
       name: "NIKE SB AIR MAX JANOSKI 2 SHOES",
       category: "Lifestyle",
-      price: 79.90,
+      price: 79.99,
       availableSizes: [40.5],
       images: [
         {
@@ -141,7 +141,7 @@ function HomePage() {
       id: 104,
       name: "NIKE SB ZOOM JANOSKI SLIP RM SHOES (BLACK WHITE)",
       category: "Street",
-      price: 70.90,
+      price: 70.99,
       availableSizes: [40.5],
       images: [
         {

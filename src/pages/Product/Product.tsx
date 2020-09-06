@@ -10,7 +10,7 @@ interface IProduct {
   id: number;
   name: string;
   category: string;
-  price: string;
+  price: number;
   availableSizes: number[];
   images: {
     id: number;
@@ -22,7 +22,7 @@ interface IProduct2 {
   id: number;
   name: string;
   category: string;
-  price: string;
+  price: number;
   size: number;
   images: {
     id: number;
@@ -45,18 +45,23 @@ function Product() {
 
   const currentProduct: IProduct = location.state;
 
-  function addToCar(e: any) {
+  function addToCar(e: React.FormEvent) {
     e.preventDefault();
-    const produto = {
-      id: location.state.id,
-      name: location.state.name,
-      category: location.state.category,
-      price: location.state.price,
-      size: 40.5,
-      images: location.state.images,
-    };
 
-    dispatch(addCarItem(produto));
+    if (selectedSize === "Choose your size:") {
+      alert("Selecione um tamanho");
+    } else {
+      const produto = {
+        id: location.state.id,
+        name: location.state.name,
+        category: location.state.category,
+        price: location.state.price,
+        size: Number(selectedSize),
+        images: location.state.images,
+      };
+
+      dispatch(addCarItem(produto));
+    }
   }
 
   return (
@@ -90,7 +95,7 @@ function Product() {
                 </h1>
               </div>
               <div className="product-price">
-                199,99€
+                {currentProduct.price}
               </div>
             </div>
             <form onSubmit={addToCar}>
