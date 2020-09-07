@@ -9,6 +9,7 @@ interface IProduct {
   category: string;
   price: number;
   size: number;
+  quantity: number;
   images: {
     id: number;
     url: string;

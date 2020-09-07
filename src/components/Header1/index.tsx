@@ -33,6 +33,16 @@ const Header1: React.FC = () => {
 
   const url = "";
 
+  function calculateElements() {
+    var counter = 0;
+
+    for (var i = 0; i < carElements.length; i++) {
+      counter += carElements[i].quantity;
+    }
+
+    return counter;
+  }
+
   return (
     <>
       <Container>
@@ -56,7 +66,7 @@ const Header1: React.FC = () => {
           <div className="infos">
             <h6>Bem vindo, {username}</h6>
             <a href="/cart">
-              <h6>Carrinho: {carElements.length}</h6>
+              <h6>Carrinho: {calculateElements()}</h6>
             </a>
           </div>
           <Switch

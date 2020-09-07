@@ -57,6 +57,7 @@ function Product() {
         category: location.state.category,
         price: location.state.price,
         size: Number(selectedSize),
+        quantity: 1,
         images: location.state.images,
       };
 

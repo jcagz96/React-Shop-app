@@ -13,16 +13,32 @@ export default function auth(
 ): CarState {
   switch (action.type) {
     case "@car/ADD":
-      console.log("----> " + state.totalPrice);
-      console.log("--|--> " + action.payload.carItem.price);
+      const projectIndex = state.carElements.findIndex((carElement) =>
+        carElement.id === action.payload.carItem.id &&
+        carElement.size === action.payload.carItem.size
+      );
 
-      return {
-        ...state,
-        emptyCar: false,
-        totalPrice: state.totalPrice + action.payload.carItem.price,
-        carSize: state.carSize + 1,
-        carElements: [...state.carElements, action.payload.carItem],
-      };
+      if (projectIndex > -1) {
+        const newArray = state.carElements;
+        newArray[projectIndex].quantity++;
+
+        return {
+          ...state,
+          emptyCar: false,
+          totalPrice: state.totalPrice + action.payload.carItem.price,
+          carSize: state.carSize + 1,
+          carElements: newArray,
+        };
+      } else {
+        return {
+          ...state,
+          emptyCar: false,
+          totalPrice: state.totalPrice + action.payload.carItem.price,
+          carSize: state.carSize + 1,
+          carElements: [...state.carElements, action.payload.carItem],
+        };
+      }
+
     case "@car/REMOVE":
       var emptyCarFlag: boolean = false;
 

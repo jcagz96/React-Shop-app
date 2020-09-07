@@ -32,11 +32,11 @@ function Cart() {
                   <h6>{item.category}</h6>
                 </div>
                 <div className="product-price">
-                  <h6>{item.price}</h6>
+                  <h6>{item.quantity * item.price}</h6>
                 </div>
                 <div className="product-size">
                   <h6>Size: {item.size}</h6>
-                  <h6>Quantidade: 1</h6>
+                  <h6>Quantidade: {item.quantity}</h6>
                 </div>
                 <div className="product-size">
                   <button
